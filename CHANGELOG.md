@@ -2,6 +2,10 @@
 
 All notable changes to `pdf-shipping` will be documented in this file.
 
+## 1.0.2 - 2022-07-19
+
+Add shippable interface
+
 ## 1.0.1 - 2022-07-19
 
 Register singleton for facade access

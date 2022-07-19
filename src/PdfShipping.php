@@ -5,6 +5,7 @@ namespace Pdfsystems\PdfShipping;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Pdfsystems\PdfShipping\Dtos\OrderDto;
+use Pdfsystems\PdfShipping\Dtos\ShipmentResultDto;
 use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 class PdfShipping
@@ -35,6 +36,20 @@ class PdfShipping
 
         return new OrderDto(
             json_decode($response->getBody()->getContents(), flags: JSON_OBJECT_AS_ARRAY)
+        );
+    }
+
+    public function getShipments(string $tenant, int $lastId = 0): ShipmentResultDto
+    {
+        $response = $this->client->get('/'.$tenant.'/api/tracking', [
+            'query' => ['id' => $lastId],
+        ]);
+
+        $shipments = json_decode($response->getBody()->getContents(), flags: JSON_OBJECT_AS_ARRAY);
+
+        return new ShipmentResultDto(
+            count: count($shipments),
+            shipments: $shipments
         );
     }
 

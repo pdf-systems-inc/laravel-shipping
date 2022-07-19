@@ -2,6 +2,10 @@
 
 All notable changes to `pdf-shipping` will be documented in this file.
 
+## 1.1.1 - 2022-07-19
+
+Add order reference to shipment DTO
+
 ## 1.1.0 - 2022-07-19
 
 Add ability to load shipments back

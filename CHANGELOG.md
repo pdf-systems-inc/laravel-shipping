@@ -2,6 +2,10 @@
 
 All notable changes to `pdf-shipping` will be documented in this file.
 
+## 1.1.2 - 2022-07-19
+
+Add ability to specify the source application when loading in shipments
+
 ## 1.1.1 - 2022-07-19
 
 Add order reference to shipment DTO

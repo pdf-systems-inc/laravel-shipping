@@ -2,5 +2,6 @@
 
 // config for Pdfsystems/PdfShipping
 return [
-    'url' => 'https://shipping.pdfsystems.com',
+    'url' => env('PDF_SHIPPING_URL', 'https://shipping.pdfsystems.com'),
+    'token' => env('PDF_SHIPPING_TOKEN'),
 ];

@@ -17,5 +17,9 @@ class PdfShippingServiceProvider extends PackageServiceProvider
         $package
             ->name('pdf-shipping')
             ->hasConfigFile();
+
+        $this->app->singleton('pdf-shipping', function () {
+            return new PdfShipping();
+        });
     }
 }

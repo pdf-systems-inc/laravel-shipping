@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Pdfsystems\PdfShipping\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PdfShippingCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'pdf-shipping';
 
     public $description = 'My command';
 

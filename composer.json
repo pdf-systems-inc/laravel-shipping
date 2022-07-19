@@ -31,8 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pdfsystems\\PdfShipping\\": "src",
-            "Pdfsystems\\PdfShipping\\Database\\Factories\\": "database/factories"
+            "Pdfsystems\\PdfShipping\\": "src"
         }
     },
     "autoload-dev": {

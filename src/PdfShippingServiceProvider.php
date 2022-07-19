@@ -4,7 +4,6 @@ namespace Pdfsystems\PdfShipping;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Pdfsystems\PdfShipping\Commands\PdfShippingCommand;
 
 class PdfShippingServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,6 @@ class PdfShippingServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('pdf-shipping')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_pdf-shipping_table')
-            ->hasCommand(PdfShippingCommand::class);
+            ->hasConfigFile();
     }
 }

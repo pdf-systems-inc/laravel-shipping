@@ -23,8 +23,12 @@ class PdfShipping
      * @throws UnknownProperties
      * @throws GuzzleException
      */
-    public function createOrder(string $tenant, OrderDto $order): OrderDto
+    public function createOrder(string $tenant, OrderDto|Shippable $order): OrderDto
     {
+        if ($order instanceof Shippable) {
+            $order = $order->convertToOrderDto();
+        }
+
         $response = $this->client->post('/'.$tenant.'/api/order', [
             'json' => $order->toArray(),
         ]);

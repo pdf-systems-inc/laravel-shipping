@@ -14,7 +14,7 @@ class ShipmentDto extends DataTransferObject
 {
     public int $id;
 
-    public int $order_id;
+    public OrderDto $order;
 
     public string $tracking_number;
 

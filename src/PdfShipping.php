@@ -39,10 +39,13 @@ class PdfShipping
         );
     }
 
-    public function getShipments(string $tenant, int $lastId = 0): ShipmentResultDto
+    public function getShipments(string $tenant, int $sourceApplication = null, int $lastId = 0): ShipmentResultDto
     {
         $response = $this->client->get('/'.$tenant.'/api/tracking', [
-            'query' => ['id' => $lastId],
+            'query' => [
+                'id' => $lastId,
+                'source' => $sourceApplication,
+            ],
         ]);
 
         $shipments = json_decode($response->getBody()->getContents(), flags: JSON_OBJECT_AS_ARRAY);

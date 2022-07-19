@@ -15,7 +15,7 @@ class PdfShipping
     {
         $this->client = new Client([
             'base_uri' => config('pdf-shipping.url'),
-            'headers' => $this->getHeaders()
+            'headers' => $this->getHeaders(),
         ]);
     }
 
@@ -25,8 +25,8 @@ class PdfShipping
      */
     public function createOrder(string $tenant, OrderDto $order): OrderDto
     {
-        $response = $this->client->post('/' . $tenant . '/api/order', [
-            'json' => $order->toArray()
+        $response = $this->client->post('/'.$tenant.'/api/order', [
+            'json' => $order->toArray(),
         ]);
 
         return new OrderDto(
@@ -40,7 +40,7 @@ class PdfShipping
     public function getHeaders(): array
     {
         return [
-            'Authorization' => 'Bearer ' . config('pdf-shipping.token'),
+            'Authorization' => 'Bearer '.config('pdf-shipping.token'),
             'Accept' => 'application/json',
         ];
     }
